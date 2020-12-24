@@ -7,5 +7,16 @@
 module.exports = {
   theme: {},
   variants: {},
-  plugins: []
+  plugins: [],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'assets/css/*.scss',
+      'plugins/**/*.js',
+      'nuxt.config.js',
+    ]
+  }
 }
