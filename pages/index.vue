@@ -10,7 +10,9 @@
       class="relative flex items-center justify-center flex-1 h-screen py-24 bg-no-repeat bg-cover"
       style="background-image: url(https://source.unsplash.com/rf6ywHVkrlY)"
     >
-      <trip-form />
+      <client-only>
+        <trip-form />
+      </client-only>
     </section>
   </div>
 </template>
