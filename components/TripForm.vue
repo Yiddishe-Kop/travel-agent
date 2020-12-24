@@ -66,6 +66,7 @@ export default {
     const res = await this.$axios.get("/airports.json");
     this.airports = res.data;
   },
+  fetchOnServer: false,
 };
 </script>
 
