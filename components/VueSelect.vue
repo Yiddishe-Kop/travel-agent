@@ -93,6 +93,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .custom-select {
   .v-select {
     border-radius: 8px;
@@ -156,4 +157,5 @@ export default {
     }
   }
 }
+/*! purgecss end ignore */
 </style>
