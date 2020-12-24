@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import VueSelect from "~/components/VueSelect.vue";
+import VueSelect from "./VueSelect.vue";
 
 export default {
   name: "TripForm",
