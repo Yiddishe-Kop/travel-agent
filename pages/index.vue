@@ -1,77 +1,68 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        travel-agent
-      </h1>
-      <h2 class="subtitle">
-        My funkadelic Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="w-screen min-h-screen flex flex-col">
+    <header class="py-3 px-6 bg-gray-700">
+      <a href="/">
+        <h2 class="font-bold text-2xl text-white">High End Travel</h2>
+      </a>
+    </header>
+
+    <section
+      class="h-screen relative py-24 flex-1 flex items-center justify-center bg-no-repeat bg-cover"
+      style="background-image: url(https://source.unsplash.com/rf6ywHVkrlY)"
+    >
+      <div class="bg-gray-200 p-6 md:p-8 rounded-lg shadow-md bg-opacity-75">
+        <formulate-form @submit="submit" class="grid grid-cols-12 gap-x-4">
+          <formulate-input
+            v-model="form.tripType"
+            :options="{
+              return: 'Return',
+              oneWay: 'One Way',
+              multi: 'Multi City',
+            }"
+            type="radio"
+            validation="required"
+            element-class="flex space-x-4 "
+            outer-class="col-span-full"
+          />
+          <vue-select v-model="form.from" label="From" class="col-span-6" />
+          <vue-select v-model="form.to" label="To" class="col-span-6" />
+
+          <formulate-input
+            v-model="form.departAt"
+            label="Depart Date"
+            type="date"
+            validation="required"
+            outer-class="col-span-6 formulate-input"
+          />
+          <formulate-input
+            v-model="form.returnAt"
+            label="Return Date"
+            type="date"
+            validation="required"
+            outer-class="col-span-6 formulate-input"
+          />
+        </formulate-form>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import VueSelect from "~/components/VueSelect.vue";
 
 export default {
   components: {
-    Logo
-  }
-}
+    VueSelect,
+  },
+  data() {
+    return {
+      form: {},
+    };
+  },
+  methods: {
+    submit() {
+      console.log("Hooray!");
+    },
+  },
+};
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

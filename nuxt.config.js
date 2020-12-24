@@ -23,11 +23,14 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/formulate.scss',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/formulate.js',
+    '@/plugins/vselect.js',
   ],
   /*
   ** Nuxt.js dev-modules
