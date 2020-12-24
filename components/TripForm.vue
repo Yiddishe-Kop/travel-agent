@@ -62,7 +62,7 @@ export default {
       console.log("Hooray!");
     },
   },
-  async mounted() {
+  async fetch() {
     const res = await this.$axios.get("/airports.json");
     this.airports = res.data;
   },
