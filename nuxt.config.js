@@ -29,8 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/formulate.js',
-    '@/plugins/vselect.js',
+    '@/plugins/formulate.client.js',
+    '@/plugins/vselect.client.js',
   ],
   /*
   ** Nuxt.js dev-modules
